@@ -1,0 +1,17 @@
+p, b {
+    white-space: pre-line;
+    font-family: 'Cascadia Code', sans-serif;
+    color: white;
+    margin-right: 6px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+body {
+    background-color: black;  
+}
+header {
+    margin-bottom: 20px;
+}
+a {
+    color: rgb(58, 233, 0)
+}

@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    { "source": "/follow", "destination": "https://github.com/axellse", "permanent": true },
+      { "source": "/rtpg/tutorial", "destination": "https://github.com/Axelanse/RobloxTexturePackGenerator/wiki/Guide:-Making-your-first-Texture-Pack", "permanent": true },
+          { "source": "/rtpg/download.html", "destination": "https://github.com/Axelanse/RobloxTexturePackGenerator/releases/download/verson2/RobloxTexturePackGenerator.zip", "permanent": true },
+          { "source": "/install.sh", "destination": "https://artifacts.axell.me/p/terminalpilot-artifacts/install.sh", "permanent": true },
+     { "source": "/donate", "destination": "https://www.roblox.com/games/16923949905/axelldonate#!/store", "permanent": true }
+  ]
+}

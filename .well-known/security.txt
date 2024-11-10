@@ -1,0 +1,2 @@
+# To disclose a security issue, you can contact me via email.
+Contact: mailto:security@axell.me
