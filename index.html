@@ -10,13 +10,41 @@
     <link href="./main.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
+<script>
+    document.querySelectorAll('.cat-pic').forEach((element) => {
+        let start = new Date()
+        element.onload = () =>  {
+            console.log('took ' + new Date() - start + 'ms to load')
+        }
+    })
+    ;(async () => {
+        let alright
+        try {
+            alright = (await fetch("https://power-server.axell.me/dynamic-content/cat-pic", {
+                headers: {
+                    "sec-fetch-dest" : "image"
+                }
+            })).ok
+        } catch (e) {
+            alright = false
+        }
+
+        if (!alright) {
+            document.querySelectorAll('.cat-pic,.power-server-fetched').forEach((element) => {
+                element.src = element.src.replace("power-server", "server")
+            })
+
+            document.body.style['background-image'] = document.body.style['background-image'].replace("power-server", "server")
+        }
+    })()
+</script>
 <body>
     <div class="page-flex">
         <div class="page-flex-inner">
             <div class="window about">
                 <div class="window-topbar"><span class="window-title">about</span> </span><span>- □ ⨯</span></div>
                 <div class="window-innercontent">
-                    <a href="https://axell.neocities.org"><img src="http://server.axell.me/static-content/web-profile-image.png" alt="cat" style="width: 150px; margin-right: 7px;"/></a>
+                    <a href="https://axell.neocities.org"><img class="power-server-fetched" src="http://power-server.axell.me/static-content/web-profile-image.png" alt="cat" style="width: 150px; margin-right: 7px;"/></a>
                     <span class="window-text">hi, im axell. Im a full stack developer but i mostly like writing backend and desktop apps. I use javascript whenever i can but i know c#, luau, vb and python too. I develop, experiment and reverse engineer on Roblox!</span>
                 </div>
             </div>         
@@ -57,9 +85,9 @@
             <div class="window gallery">
                 <div class="window-topbar"><span class="window-title">gallery</span> </span><span>- □ ⨯</span></div>
                     <p class="window-text" style="margin: 1px; margin-bottom: 10px;">some pictures of my cats</p>
-                    <img class="cat-pic" src="https://server.axell.me/dynamic-content/cat-pic?no-cache=1" alt="cat" style="width: 140px; margin-right: 7px;"/>
-                    <img class="cat-pic"src="https://server.axell.me/dynamic-content/cat-pic?no-cache=2" alt="cat" style="width: 140px; margin-right: 7px;"/>
-                    <img class="cat-pic"src="https://server.axell.me/dynamic-content/cat-pic?no-cache=3" alt="cat" style="width: 140px; margin-right: 7px;"/>
+                    <img class="cat-pic" src="https://power-server.axell.me/dynamic-content/cat-pic?no-cache=1" alt="cat" style="width: 140px; margin-right: 7px;"/>
+                    <img class="cat-pic"src="https://power-server.axell.me/dynamic-content/cat-pic?no-cache=2" alt="cat" style="width: 140px; margin-right: 7px;"/>
+                    <img class="cat-pic"src="https://power-server.axell.me/dynamic-content/cat-pic?no-cache=3" alt="cat" style="width: 140px; margin-right: 7px;"/>
 
             </div>
         </div>
