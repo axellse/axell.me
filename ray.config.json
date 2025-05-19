@@ -1,3 +1,9 @@
 {
-  "ProjectType" : "static"
+  "Version" : "v1",
+  "Pipeline" : [
+    {
+      "Tool" : "rayserve",
+      "Type" : "deploy"
+    }
+  ]
 }
