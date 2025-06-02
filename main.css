@@ -83,4 +83,18 @@ body {
     bottom: 0;
     right: 0;
 }
+@media screen and (orientation: portrait) {
+    .right-bottom-buttons {
+        display: none;
+    }
+    body {
+        transform: scale(0.7);
+    }
+}
+.discord-hover .discord-username {
+    display: none;
+}
 
+.discord-hover:hover .discord-username {
+    display: inline;
+}
