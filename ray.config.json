@@ -3,7 +3,17 @@
   "Pipeline" : [
     {
       "Tool" : "rayserve",
-      "Type" : "deploy"
+      "Type" : "deploy",
+      "RayserveRedirects" : [
+        {
+          "Path" : "/follow",
+          "Destination" : "https://github.com/axellse"
+        },
+        {
+          "Path" : "/donate",
+          "Destination" : "https://www.roblox.com/games/16923949905/Donation-Place#!/store"
+        }
+      ]
     }
   ]
 }
