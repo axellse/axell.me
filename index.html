@@ -121,11 +121,25 @@
 
             const agent = await initAgent(agents.Merlin);
             agent.show();
-            agent["_el"].addEventListener('click', () => {
-                window.open("https://status.cafe/users/axellse", "_blank")
+            let st
+            let mx, my
+            agent["_el"].addEventListener('mousedown', (me) => {
+                st = Date.now()
+                mx = me.clientX
+                my = me.clientY
             })
 
-            agent.speak(r.face + '"' + r.content + '", ' + r.timeAgo, {hold: true});
+            agent["_el"].addEventListener('mouseup', (me) => {
+                console.log(mx, me.clientX)
+                if (Date.now() - st < 300 && Math.abs(me.clientX - mx) < 50 && Math.abs(me.clientY - my) < 50) {
+                    window.open("https://status.cafe/users/axellse", "_blank")
+                }
+            })
+
+
+
+            let unescapedContent = (new DOMParser().parseFromString(r.content, "text/html")).documentElement.textContent
+            agent.speak(r.face + '"' + unescapedContent + '", ' + r.timeAgo, {hold: true});
             setInterval(() => {
                 agent.animate()
             }, 6000)
