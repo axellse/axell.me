@@ -130,9 +130,10 @@
             })
 
             agent["_el"].addEventListener('mouseup', (me) => {
-                console.log(mx, me.clientX)
                 if (Date.now() - st < 300 && Math.abs(me.clientX - mx) < 50 && Math.abs(me.clientY - my) < 50) {
                     window.open("https://status.cafe/users/axellse", "_blank")
+                } else {
+                    agent.animate()
                 }
             })
 
